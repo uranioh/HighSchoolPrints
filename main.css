@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+
 body {
     margin: 0;
     padding: 0;
+
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 header {
@@ -22,6 +29,80 @@ header > nav {
 }
 
 header > nav > a {
+    color: white;
+    text-decoration: none;
+}
+
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#img_single {
+    width: 20rem;
+}
+
+#img_group {
+    height: 20rem;
+}
+
+#img_single, #img_group {
+    border: 10px solid white;
+    box-shadow: 0 0 20px gray;
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+section[id="landing"] {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+
+    background-image: url('#');
+    background: lightblue;
+}
+
+section[id="landing"] > div {
+    width: 75%;
+}
+
+section[id="landing"] > div > h1 {
+    margin: 0;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+section > span {
+    width: 25%;
+}
+
+/* footer */
+footer {
+    background-color: #333;
+    color: white;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 30px;
+    margin-top: 5rem;
+}
+
+footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer > div > a {
     color: white;
     text-decoration: none;
 }
