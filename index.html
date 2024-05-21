@@ -8,7 +8,7 @@
 <body>
 <header>
     <div>
-        <img src="img/logo.png" alt="logo">
+        <img src="#" alt="logo">
     </div>
     <nav>
         <a href="#">Home</a>
@@ -25,15 +25,22 @@
                 Porta non pulvinar neque laoreet. Neque egestas congue quisque egestas diam in arcu.
                 Porta nibh venenatis cras sed. Sed libero enim sed faucibus turpis in eu.
             </p>
-            <button onclick="document.getElementById().scrollIntoView();">
-                Scopri di più
+            <button onclick="document.getElementById('portraits').scrollIntoView(
+                {behavior: 'smooth', block: 'start', inline: 'nearest'}
+            );">
+                Foto singole
+            </button>
+            <button onclick="document.getElementById('group_photos').scrollIntoView(
+                {behavior: 'smooth', block: 'start', inline: 'nearest'}
+            );">
+                Foto di gruppo
             </button>
         </div>
     </section>
 
     <section id="portraits">
-        <img src="img/single.jpg" id="img_single">
-        <span>
+        <img src="img/single.jpg" id="img_single" alt="Foto ritratto">
+        <div>
             <h1>FOTO SINGOLE</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -41,14 +48,11 @@
                 Porta non pulvinar neque laoreet. Neque egestas congue quisque egestas diam in arcu.
                 Porta nibh venenatis cras sed. Sed libero enim sed faucibus turpis in eu.
             </p>
-            <button onclick="document.getElementById().scrollIntoView();">
-                Scopri di più
-            </button>
-        </span>
+        </div>
     </section>
 
     <section id="group_photos">
-        <span>
+        <div>
             <h1>FOTO DI GRUPPO</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -56,11 +60,8 @@
                 Porta non pulvinar neque laoreet. Neque egestas congue quisque egestas diam in arcu.
                 Porta nibh venenatis cras sed. Sed libero enim sed faucibus turpis in eu.
             </p>
-            <button onclick="document.getElementById().scrollIntoView();">
-                Scopri di più
-            </button>
-        </span>
-        <img src="img/group.jpg" id="img_group">
+        </div>
+        <img src="img/group.jpg" id="img_group" alt="Foto di gruppo">
     </section>
 </main>
 <footer>
@@ -69,9 +70,9 @@
         <a href="#">About</a>
     </div>
     <div id="footer_social">
-        <a href="#"><img src="img/facebook.png" alt="facebook"></a>
-        <a href="#"><img src="img/twitter.png" alt="twitter"></a>
-        <a href="#"><img src="img/instagram.png" alt="instagram"></a>
+        <a href="#"><img src="#" alt="facebook"></a>
+        <a href="#"><img src="#" alt="twitter"></a>
+        <a href="#"><img src="#" alt="instagram"></a>
     </div>
     <div id="footer_copy">
         <span>&copy; 2024 HSPrints Srl</span>
