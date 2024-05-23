@@ -1,0 +1,51 @@
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#img_single {
+    width: 20rem;
+}
+
+#img_group {
+    height: 20rem;
+}
+
+#img_single, #img_group {
+    border: 10px solid white;
+    box-shadow: 0 0 20px gray;
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+section[id="landing"] {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 5rem);
+    justify-content: center;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/background.jpg') center fixed;
+    color: white;
+    background-size: cover;
+}
+
+section[id="landing"] > div {
+    width: 75%;
+}
+
+section[id="landing"] > div > h1 {
+    margin: 0;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+section > div {
+    width: 25%;
+}

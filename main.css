@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
 
-
 body {
     margin: 0;
     padding: 0;
@@ -11,32 +10,41 @@ body {
 }
 
 header {
-
     background-color: #333;
     color: white;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 
-    padding: 10px;
 
+    height: 5rem;
 }
 
-header > nav {
+header > div {
+    width: 75%;
+
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    align-items: center;
 }
 
-header > nav > a {
+header > div > nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+header > div > nav > a {
     color: white;
     text-decoration: none;
 }
 
 /* button */
 button {
-    background-color: #333;
-    color: white;
+    color: #333;
+    background: white;
 
     border: none;
     border-radius: 5px;
@@ -44,56 +52,8 @@ button {
     padding: 10px;
 }
 
-/* main */
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-}
-
-#img_single {
-    width: 20rem;
-}
-
-#img_group {
-    height: 20rem;
-}
-
-#img_single, #img_group {
-    border: 10px solid white;
-    box-shadow: 0 0 20px gray;
-}
-
-section {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px;
-}
-
-section[id="landing"] {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/background.jpg') center fixed;
-    color: white;
-    background-size: cover;
-}
-
-section[id="landing"] > div {
-    width: 75%;
-}
-
-section[id="landing"] > div > h1 {
+h1 {
     margin: 0;
-    font-size: 5rem;
-    font-weight: bold;
-}
-
-section > div {
-    width: 25%;
 }
 
 /* footer */
