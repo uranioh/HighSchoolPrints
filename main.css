@@ -41,6 +41,10 @@ header > div > nav > a {
     text-decoration: none;
 }
 
+header > div > div > a > img {
+    width: 50%;
+}
+
 /* button */
 button {
     color: #333;

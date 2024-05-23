@@ -1,38 +1,116 @@
-main > section {
+body {
+    background: #FEF0C1;
+}
+
+main > section[id="bgimage"], main > section[id="logo"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Make sure it's behind the form */
+}
+
+main > section[id="bgimage"] > img, main > section[id="logo"] > img {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+main > section[id="logo"] > img {
+    width: auto;
+    top: 85%;
+    right: 1.5%;
+}
+
+main > section[id="login"] {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     height: 100vh;
+
+    padding-left: 20%;
 }
 
 main > section > div {
+    width: 25%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    background: rgba(255, 255, 255, 0.8);
+
+    /*    gaussian blur */
+    backdrop-filter: blur(10px);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+
 }
 
 form > div {
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
 
 label {
     font-weight: bold;
     font-size: 0.8rem;
     padding-left: 10px;
-/*    letter spacing and all caps*/
+    /*    letter spacing and all caps*/
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-input {
+input, select {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #333;
+
+
+    /*    shadow*/
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, select:focus {
+    border-color: #f8dc92;
+    box-shadow: 0 0 5px rgb(248, 220, 146);
+    outline: none;
+}
+
+select {
+    appearance: none;
+    background: white url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat right 10px center;
+    background-size: 20px;
+    padding-right: 40px;
+}
+
+button {
+    margin-top: 20px;
+
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+
+    letter-spacing: 2px;
+}
+
+button:hover {
+    background-color: #ffd984;
+    color: black;
+    border: none;
+    transition: 0.3s;
 }
