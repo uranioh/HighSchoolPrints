@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 100vh;
 }
 
@@ -53,6 +53,17 @@ button[type="submit"] {
     border: 2px solid lightgray;
     border-radius: 10px;
     cursor: pointer;
+}
+
+#cutting_board {
+    position: absolute;
+    top: auto;
+    left: 30%;
+    transform: translate(-50%, -50%);
+
+
+    overflow: hidden;
+    z-index: -1; /* Make sure it's behind the form */
 }
 
 #images {
