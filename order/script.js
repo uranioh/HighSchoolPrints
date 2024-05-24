@@ -1,56 +1,11 @@
 function plus_single(id) {
     document.getElementById(id).stepUp();
     refresh();
-    // let qty = document.getElementById(id).value;
-    //
-    //
-    // // let images = document.getElementById("images");
-    // // while (images.firstChild) {
-    // //     images.removeChild(images.firstChild);
-    // // }
-    //
-    // // remove all divs with id img_single
-    // let divs = document.getElementsByClassName("img_single");
-    // while (divs.length > 0) {
-    //     divs[0].parentNode.removeChild(divs[0]);
-    // }
-    //
-    // for (let i = 0; i < qty; i++) {
-    //     let div = document.createElement("div");
-    //     div.innerHTML = "ID: " + id;
-    //     div.className = "img_single";
-    //
-    //     let images = document.getElementById("images");
-    //     images.append(div);
-    // }
 }
 
 function plus_group(id) {
     document.getElementById(id).stepUp();
-
     refresh();
-    // let qty = document.getElementById(id).value;
-
-    // let images = document.getElementById("images");
-    // while (images.firstChild) {
-    //     images.removeChild(images.firstChild);
-    // }
-
-    // remove all divs with id img_group
-    // let divs = document.getElementsByClassName("img_group");
-    // while (divs.length > 0) {
-    //     divs[0].parentNode.removeChild(divs[0]);
-    // }
-    //
-    // for (let i = 0; i < qty; i++) {
-    //     let div = document.createElement("div");
-    //     div.innerHTML = "ID: " + id;
-    //     div.className = "img_group";
-    //
-    //     let images = document.getElementById("images");
-    //     images.append(div);
-    // }
-
 }
 
 function minus(id) {
@@ -61,30 +16,51 @@ function minus(id) {
     // images.removeChild(images.lastChild);
 }
 
-function refresh () {
-    let images = document.getElementById("images");
-    while (images.firstChild) {
-        images.removeChild(images.firstChild);
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("size_single").addEventListener("change", refresh);
+    document.getElementById("size_group").addEventListener("change", refresh);
+});
+
+
+function refresh() {
+    let verticals = document.getElementById("verticals");
+    while (verticals.firstChild) {
+        verticals.removeChild(verticals.firstChild);
     }
+
+    let horizontals = document.getElementById("horizontals");
+    while (horizontals.firstChild) {
+        horizontals.removeChild(horizontals.firstChild);
+    }
+
 
     let qty_single = document.getElementById("qty_single").value;
     let qty_group = document.getElementById("qty_group").value;
 
-    for (let i = 0; i < qty_single; i++) {
-        let div = document.createElement("div");
-        div.innerHTML = "img_single";
-        div.className = "img_single";
+    let size_single = document.getElementById("size_single").value;
+    let size_group = document.getElementById("size_group").value;
 
-        let images = document.getElementById("images");
-        images.append(div);
+    for (let i = 0; i < qty_single; i++) {
+        let img = document.createElement("img");
+        img.src = "img/" + size_single + ".jpg";
+        img.className = "vertical";
+
+        img.style.top = (i * 27 + 28) + "px";
+        img.style.left = (i * 27 + 60) + "px";
+
+        let images = document.getElementById("verticals");
+        images.append(img);
     }
 
     for (let i = 0; i < qty_group; i++) {
-        let div = document.createElement("div");
-        div.innerHTML = "img_group";
-        div.className = "img_group";
+        let img = document.createElement("img");
+        img.src = "img/" + size_group + ".jpg";
+        img.className = "horizontal";
 
-        let images = document.getElementById("images");
-        images.append(div);
+        img.style.bottom = (i * 27 + 70) + "px";
+        img.style.right = (i * 27 + 33) + "px";
+
+        let images = document.getElementById("horizontals");
+        images.append(img);
     }
 }

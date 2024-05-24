@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100vh;
 }
 
@@ -31,7 +31,7 @@ form > div {
 }
 
 select {
-    width: 100px;
+    width: 200px;
     height: 50px;
 
     /*arrow*/
@@ -67,5 +67,32 @@ button[type="submit"] {
 }
 
 #images {
-    width: 300px;
+    position: absolute;
+    width: 954px;
+    height: 636px;
+
+    left: 5%;
 }
+
+#images > div > img {
+    position: absolute;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+img[class="vertical"] {
+    transform: rotate(90deg) translate(0, -100%);
+    transform-origin: top left;
+
+    top: 28px;
+    left: 60px;
+}
+
+img[class="horizontal"] {
+    bottom: 70px;
+    right: 33px;
+}
+
+/*img[id="3R_Vertical"], img[id="4R_Vertical"], img[id="5R_Vertical"], img[id="6R_Vertical"] {*/
+/*    transform: rotate(90deg);*/
+/*}*/

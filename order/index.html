@@ -34,17 +34,33 @@
     </div>
 
     <div id="images">
+        <div id="verticals">
+<!--            <img src="img/3R.jpg" alt="vertical" class="vertical">-->
+        </div>
 
+        <div id="horizontals">
+<!--            <img src="img/3R.jpg" alt="horizontal" class="horizontal">-->
+        </div>
+
+<!--        <img src="img/3R.jpg" alt="3R_Vertical" id="3R_Vertical">-->
+<!--        <img src="img/4R.jpg" alt="4R_Vertical" id="4R_Vertical">-->
+<!--        <img src="img/5R.jpg" alt="5R_Vertical" id="5R_Vertical">-->
+<!--        <img src="img/6R.jpg" alt="6R_Vertical" id="6R_Vertical">-->
+
+<!--        <img src="img/3R.jpg" alt="3R_Horizontal" id="3R_Horizontal">-->
+<!--        <img src="img/4R.jpg" alt="4R_Horizontal" id="4R_Horizontal">-->
+<!--        <img src="img/5R.jpg" alt="5R_Horizontal" id="5R_Horizontal">-->
+<!--        <img src="img/6R.jpg" alt="6R_Horizontal" id="6R_Horizontal">-->
     </div>
 
     <form action="order.php" method="post">
         <h1>Foto singole</h1>
         <div>
             <select id="size_single" name="size_single" required>
-                <option value="10x15">10x15</option>
-                <option value="13x18">13x18</option>
-                <option value="15x20">15x20</option>
-                <option value="20x30">20x30</option>
+                <option value="3R">3R 9x13cm 3.5x5"</option>
+                <option value="4R">4R 10x15cm 4x6"</option>
+                <option value="5R">5R 13x18cm 5x7"</option>
+                <option value="6R">6R 15x20cm 6x8"</option>
             </select>
 
 
@@ -58,10 +74,10 @@
         <div>
 
             <select id="size_group" name="size_group" required>
-                <option value="10x15">10x15</option>
-                <option value="13x18">13x18</option>
-                <option value="15x20">15x20</option>
-                <option value="20x30">20x30</option>
+                <option value="3R">3R 13x9cm 5x3.5"</option>
+                <option value="4R">4R 15x10cm 6x4"</option>
+                <option value="5R">5R 18x13cm 7x5"</option>
+                <option value="6R">6R 20x15cm 8x6"</option>
             </select>
 
             <input type="number" id="qty_group" name="qty_group" required min="0" max="5" value="0" disabled>
