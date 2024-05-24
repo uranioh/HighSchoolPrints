@@ -46,7 +46,7 @@ function refresh() {
         img.className = "vertical";
 
         img.style.top = (i * 27 + 28) + "px";
-        img.style.left = (i * 27 + 60) + "px";
+        img.style.left = (i * 27 + 63) + "px";
 
         let images = document.getElementById("verticals");
         images.append(img);
@@ -58,7 +58,7 @@ function refresh() {
         img.className = "horizontal";
 
         img.style.bottom = (i * 27 + 70) + "px";
-        img.style.right = (i * 27 + 33) + "px";
+        img.style.right = (i * 27 + 30) + "px";
 
         let images = document.getElementById("horizontals");
         images.append(img);
