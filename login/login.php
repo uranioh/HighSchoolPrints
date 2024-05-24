@@ -19,14 +19,13 @@ else {
     if(mysqli_num_rows($_result) > 0){
         $_row = mysqli_fetch_row($_result);
         $_SESSION['user_id'] = $_row[0];
+        echo "Login successful<br>";
 
-        //redirect to home page
-        header("Location: ../index.html");
+        header("Location: ../account/userInfo.php");
 
     }
     else {
         echo "Login failed";
-        //redirect to login page
 
     }
     mysqli_close($_conn);
