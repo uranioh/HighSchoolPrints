@@ -58,7 +58,8 @@ button[type="submit"] {
 #cutting_board {
     position: absolute;
     top: auto;
-    left: 30%;
+    /*left: 30%;*/
+    left: 576px;
     transform: translate(-50%, -50%);
 
 
@@ -71,7 +72,7 @@ button[type="submit"] {
     width: 954px;
     height: 636px;
 
-    left: 5%;
+    left: 96px;
 }
 
 #images > div > img {
