@@ -1,10 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Ordina</title>
 </head>
-<body>
 
+<body>
+<!-- header -->
+<header>
+    <div>
+        <div>
+            <a href="../index.html"><img src="img/logo_white.png" alt="logo"></a>
+        </div>
+        <nav>
+            <a href="/order">Ordina</a>
+            <a href="/about">Chi siamo</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Registrati</a>
+        </nav>
+    </div>
+
+</header>
+
+<!-- main -->
+<main>
+    <div id="images">
+
+    </div>
+
+    <form action="order.php" method="post">
+        <h1>Foto singole</h1>
+        <div>
+            <select id="size_single" name="size_single" required>
+                <option value="10x15">10x15</option>
+                <option value="13x18">13x18</option>
+                <option value="15x20">15x20</option>
+                <option value="20x30">20x30</option>
+            </select>
+
+
+            <input type="number" id="qty_single" name="qty_single" required min="0" max="5" value="0" disabled>
+            <!--            button +/- -->
+            <button type="button" onclick="plus_single('qty_single')">+</button>
+            <button type="button" onclick="minus('qty_single')">-</button>
+
+        </div>
+        <h1>Foto di gruppo</h1>
+        <div>
+
+            <select id="size_group" name="size_group" required>
+                <option value="10x15">10x15</option>
+                <option value="13x18">13x18</option>
+                <option value="15x20">15x20</option>
+                <option value="20x30">20x30</option>
+            </select>
+
+            <input type="number" id="qty_group" name="qty_group" required min="0" max="5" value="0" disabled>
+
+            <button type="button" onclick="plus_group('qty_group')">+</button>
+            <button type="button" onclick="minus('qty_group')">-</button>
+        </div>
+
+        <!--        <div>-->
+        <!--            <label for="notes">Note</label>-->
+        <!--            <textarea id="notes" name="notes"></textarea>-->
+        <!--        </div>-->
+        <button type="submit">Ordina</button>
+    </form>
+</main>
+
+<!-- footer -->
+<footer>
+    <!--    TO-DO: add links-->
+    <div id="footer_menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </div>
+    <div id="footer_social">
+        <a href="#"><img src="#" alt="facebook"></a>
+        <a href="#"><img src="#" alt="twitter"></a>
+        <a href="#"><img src="#" alt="instagram"></a>
+    </div>
+    <div id="footer_copy">
+        <span>&copy; 2024 HSPrints Srl</span>
+        <span> P.IVA </span>
+        <span> CF 1234567890 </span>
+    </div>
+</footer>
 </body>
 </html>
