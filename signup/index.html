@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/b4ad05c0d4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="style.css">
-    <title>Title</title>
+    <title>Registrati</title>
 </head>
 <body>
 <main>
@@ -14,10 +15,16 @@
     <section id="logo">
         <img src="../img/logo.png" alt="Logo">
     </section>
+
+    <a href="../index.html" id="back">
+        <i class="fa-regular fa-circle-left"></i>
+        <span>Torna alla home</span>
+    </a>
+
     <section id="signup">
         <div>
             <h1>Registrati</h1>
-            <form action="signup.php" method="post">
+            <form action="/signup/signup.php" method="post">
 
                 <div>
                     <label for="name">Nome</label>
@@ -96,6 +103,7 @@
 
                 <button type="submit">Crea un account HSPrints</button>
 
+                <p>Hai già un account? <a href="/login">Accedi</a></p>
             </form>
         </div>
     </section>

@@ -15,8 +15,13 @@ $_conn = mysqli_connect($_dbhost, $_dbuser, $_dbpass, $_dbname);
 if (!$_conn) {
     die("Connection failed: " . mysqli_connect_error());
 } else {
-    $_query = "SELECT * FROM Students WHERE id='$_user_id'";
+    $_query = <<<EOF
+        SELECT * 
+        FROM Students 
+        WHERE id='$_user_id'
+    EOF;
     $_result = mysqli_query($_conn, $_query);
+    
     if ($_result && mysqli_num_rows($_result) > 0) {
         $_row = mysqli_fetch_row($_result);
         $user_name = $_row[1];
@@ -37,7 +42,35 @@ if (!$_conn) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
-    <link rel="stylesheet" href="userInfoCSS.css">
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #444;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+        strong {
+            color: #555;
+        }
+
+    </style>
 </head>
 <body>
 <div class="container">

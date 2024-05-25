@@ -3,5 +3,6 @@ if (!isset($_SESSION['user_id'])){
     header('Location: ../login');
     exit;
 } else {
-    readfile("index.html");
+
+    readfile("content.html");
 }

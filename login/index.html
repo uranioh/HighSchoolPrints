@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/b4ad05c0d4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="style.css">
-    <title>Title</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -17,10 +18,16 @@
     <section id="logo">
         <img src="../img/logo.png" alt="Logo">
     </section>
+
+    <a href="../index.html" id="back">
+        <i class="fa-regular fa-circle-left"></i>
+        <span>Torna alla home</span>
+    </a>
+
     <section id="login">
         <div>
             <h1>LOGIN</h1>
-            <form action="login.php" method="post">
+            <form action="/login/login.php" method="post">
 
                 <div>
                     <label for="email">Email</label>
@@ -34,6 +41,7 @@
 
                 <button type="submit">Accedi</button>
             </form>
+            <p>Non hai un account? <a href="../signup/">Registrati</a></p>
         </div>
     </section>
 </main>
