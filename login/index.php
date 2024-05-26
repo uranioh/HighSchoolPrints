@@ -1,3 +1,7 @@
+<?php
+$next = $_GET['next'] ?? "account";
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -27,6 +31,7 @@
     <section id="login">
         <div>
             <h1>LOGIN</h1>
+<!--            <p> Next: --><?php //echo htmlspecialchars($next); ?><!--</p>-->
             <form action="/login/login.php" method="post">
 
                 <div>
@@ -38,6 +43,8 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </div>
+
+                <input type="hidden" name="next" value="<?php echo htmlspecialchars($next); ?>">
 
                 <button type="submit">Accedi</button>
             </form>

@@ -25,7 +25,13 @@ if (!$_conn) {
         $_row = mysqli_fetch_row($_result);
         $_SESSION['user_id'] = $_row[0];
 
-        header("Location: ../account/userInfo.php");
+//        check if there is a redirect parameter
+        if ($_POST['next'] == "order") {
+            header("Location: /HighSchoolPrints/order/");
+        } else {
+            header("Location: /HighSchoolPrints/account/");
+        }
+//        header("Location: /HighSchoolPrints/account/");
 
     } else {
         echo "Login failed";

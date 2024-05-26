@@ -35,7 +35,7 @@ else {
             alert('Registrazione completata con successo.');
         </script>
         ";
-        header("Location: /HighSchoolPrints/index.html");
+        header("Location: /HighSchoolPrints/");
     } else {
         echo "Errore: " . $_query . "<br>" . mysqli_error($_conn);
     }

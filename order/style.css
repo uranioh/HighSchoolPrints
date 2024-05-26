@@ -94,6 +94,6 @@ img[class="horizontal"] {
     right: 33px;
 }
 
-/*img[id="3R_Vertical"], img[id="4R_Vertical"], img[id="5R_Vertical"], img[id="6R_Vertical"] {*/
-/*    transform: rotate(90deg);*/
-/*}*/
+nav > a[href="/order"] {
+    color: #ff8e8e;
+}

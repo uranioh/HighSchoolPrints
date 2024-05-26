@@ -40,3 +40,7 @@ p {
     text-align: justify;
     text-justify: auto;
 }
+
+nav > a[href="/about"] {
+    color: #ff8e8e;
+}
