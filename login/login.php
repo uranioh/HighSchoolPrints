@@ -12,13 +12,15 @@ if (!$_conn) {
     die("Connection failed: " . mysqli_connect_error());
 } else {
     echo "Connected successfully";
+
     //check if there is a user with given credentials
     $_query = <<<EOF
         SELECT * 
         FROM Students 
-        WHERE Mail='$_mail' AND Password='$_password'
+        WHERE Mail='$_mail' AND Password='$_password' 
     EOF;
     $_result = mysqli_query($_conn, $_query);
+
     if (mysqli_num_rows($_result) > 0) {
         $_row = mysqli_fetch_row($_result);
         $_SESSION['user_id'] = $_row[0];
