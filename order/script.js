@@ -1,9 +1,4 @@
-function plus_single(id) {
-    document.getElementById(id).stepUp();
-    refresh();
-}
-
-function plus_group(id) {
+function plus(id) {
     document.getElementById(id).stepUp();
     refresh();
 }
@@ -23,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function refresh() {
+    // document.getElementById("price_single").value =
+    //     prices[document.getElementById("size_single")] *
+    //     document.getElementById("qty_single").value;
+
     let verticals = document.getElementById("verticals");
     while (verticals.firstChild) {
         verticals.removeChild(verticals.firstChild);
@@ -34,11 +33,21 @@ function refresh() {
     }
 
 
-    let qty_single = document.getElementById("qty_single").value;
-    let qty_group = document.getElementById("qty_group").value;
+    let qty_single = parseFloat(document.getElementById("qty_single").value) || 0;
+    let qty_group = parseFloat(document.getElementById("qty_group").value) || 0;
+
 
     let size_single = document.getElementById("size_single").value;
     let size_group = document.getElementById("size_group").value;
+
+    let price_single = prices[size_single] * qty_single;
+    let price_group = prices[size_group] * qty_group;
+
+    console.log(price_single);
+
+    document.getElementById("price_single").value = price_single.toFixed(2)
+    document.getElementById("price_group").value = price_group.toFixed(2);
+    document.getElementById("submit_button").textContent = "Paga €" + (price_single + price_group).toFixed(2);
 
     for (let i = 0; i < qty_single; i++) {
         let img = document.createElement("img");
@@ -63,4 +72,21 @@ function refresh() {
         let images = document.getElementById("horizontals");
         images.append(img);
     }
+}
+
+function validateForm() {
+    const qtySingle = parseInt(document.getElementById('qty_single').value, 10);
+    const qtyGroup = parseInt(document.getElementById('qty_group').value, 10);
+
+    if (isNaN(qtySingle) || isNaN(qtyGroup)) {
+        alert('Valore non valido.');
+        return false;
+    }
+
+    if (qtySingle < 1 && qtyGroup < 1) {
+        alert('Almeno una quantità deve essere maggiore di 0.');
+        return false;
+    }
+
+    return true;
 }
