@@ -5,26 +5,124 @@ body {
     color: #333;
 }
 
-section {
-    max-width: 600px;
-    margin: 50px auto;
+main > section > div {
+    width: 25%;
+    margin: 100px auto;
     padding: 20px;
-    background-color: #fff;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
 }
 
 h1 {
     color: #444;
+    text-transform: uppercase;
 }
 
-p {
-    font-size: 1.1em;
+form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
 }
 
-strong {
-    color: #555;
+form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
+
+label {
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    appearance: none;
+    background: white url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat right 10px center;
+    background-size: 20px;
+    padding-right: 40px;
+
+
+}
+
+input:focus, select:focus {
+    border-color: #ff8e8e;
+    box-shadow: 0 0 5px rgb(255, 142, 142);
+    outline: none;
+}
+
+button:disabled {
+    background-color: #651414;
+    color: #666;
+    cursor: not-allowed;
+}
+
+#editButton,
+#updateButton,
+#cancelButton{
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+#editButton:hover,
+#updateButton:hover,
+#cancelButton:hover{
+    background-color: #ff8e8e;
+    color: black;
+    border: none;
+    transition: 0.3s;
+}
+
+#deleteButton{
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+#deleteButton:hover{
+    background-color: #ff8e8e;
+    color: black;
+    border: none;
+    transition: 0.3s;
+}
+
 
 nav > a[href="/account"] {
     color: #ff8e8e;
 }
+
+a {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: inherit; /* Utilizza il colore di default del testo */
+}
+
