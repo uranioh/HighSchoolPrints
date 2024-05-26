@@ -48,7 +48,13 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['order_id'])) {
 
 <!-- main -->
 <main>
-
+    <div>
+        <h1>Ordine completato</h1>
+        <p>Grazie per aver effettuato l'ordine!</p>
+        <p>Order ID: #<?php print($_order_id); ?></p>
+        <p>Puoi visualizzare i tuoi ordini dalla sezione "Il mio account"</p>
+        <p>Grazie mille dal team di High School Prints!</p>
+    </div>
 </main>
 
 <!-- footer -->

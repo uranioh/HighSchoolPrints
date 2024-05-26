@@ -37,7 +37,7 @@ if (!$_conn) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,6 +60,7 @@ if (!$_conn) {
             document.getElementById("cancelButton").style.display = 'inline';
             document.getElementById("deleteButton").style.display = 'inline';
         }
+
         function confermaEliminazione() {
             var conferma = confirm("Sei sicuro di voler cancellare?");
             if (conferma) {
@@ -93,11 +94,13 @@ if (!$_conn) {
             <form id="deleteForm" action="/account/update.php" method="post">
                 <div>
                     <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user_name); ?>" readonly>
+                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user_name); ?>"
+                           readonly>
                 </div>
                 <div>
                     <label for="surname">Cognome</label>
-                    <input type="text" id="surname" name="surname" value="<?php echo htmlspecialchars($user_surname); ?>" readonly>
+                    <input type="text" id="surname" name="surname"
+                           value="<?php echo htmlspecialchars($user_surname); ?>" readonly>
                 </div>
                 <div>
                     <label for="class">Classe</label>
@@ -151,21 +154,68 @@ if (!$_conn) {
                 </div>
                 <div>
                     <label for="mail">Email</label>
-                    <input type="email" id="mail" name="mail" value="<?php echo htmlspecialchars($user_mail); ?>" readonly>
+                    <input type="email" id="mail" name="mail" value="<?php echo htmlspecialchars($user_mail); ?>"
+                           readonly>
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($user_password); ?>" readonly>
+                    <input type="password" id="password" name="password"
+                           value="<?php echo htmlspecialchars($user_password); ?>" readonly>
                 </div>
                 <div>
                     <input type="hidden" name="button" value="delete">
                     <button type="button" id="editButton" onclick="enableEditing()">Modifica</button>
-                    <button type="submit" name="button" id="updateButton" value="update" style="display:none;">Aggiorna</button>
-                    <a href="index.php"><button type="button" id="cancelButton" style="display:none;">Annulla</button></a>
-                    <button type="button" name="button" id="deleteButton" style="display:none;" onclick="confermaEliminazione()">Elimina account</button></a>
+                    <button type="submit" name="button" id="updateButton" value="update" style="display:none;">
+                        Aggiorna
+                    </button>
+                    <a href="index.php">
+                        <button type="button" id="cancelButton" style="display:none;">Annulla</button>
+                    </a>
+                    <button type="button" name="button" id="deleteButton" style="display:none;"
+                            onclick="confermaEliminazione()">Elimina account
+                    </button>
                 </div>
             </form>
         </div>
+    </section>
+    <section>
+        <!--        my orders -->
+        <div>
+            <h1>I tuoi ordini</h1>
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Data</th>
+                    <th>Dettagli</th>
+                </tr>
+                <?php
+                $_conn = mysqli_connect($_dbhost, $_dbuser, $_dbpass, $_dbname);
+                if (!$_conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                } else {
+                    $_query = <<<EOF
+                        SELECT * 
+                        FROM Orders 
+                        WHERE Student='$_user_id'
+                    EOF;
+                    $_result = mysqli_query($_conn, $_query);
+                    if ($_result && mysqli_num_rows($_result) > 0) {
+                        while ($_row = mysqli_fetch_row($_result)) {
+                            echo "<tr>";
+                            echo "<td>$_row[0]</td>";
+                            echo "<td>$_row[1]</td>";
+                            echo "<td><a href='/HighSchoolPrints/account/orderDetails.php?order_id=$_row[0]'>Dettagli</a></td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='3'>Nessun ordine effettuato</td></tr>";
+                    }
+                    mysqli_close($_conn);
+                }
+                ?>
+            </table>
+        </div>
+    </section>
 </main>
 
 <footer>

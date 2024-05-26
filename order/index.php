@@ -59,7 +59,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Ordina</title>
 
-<!--    php vars to js -->
+    <!--    php vars to js -->
     <script type="text/javascript">
         let prices = {
             "3R": <?php print($_prices['3R']); ?>,

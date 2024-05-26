@@ -22,7 +22,7 @@ $_conn = mysqli_connect($_dbhost, $_dbuser, $_dbpass, $_dbname);
 if (!$_conn) {
     die("Connection failed: " . mysqli_connect_error());
 } else {
-    if($_button_id == "delete") {
+    if ($_button_id == "delete") {
         $_query = "SET foreign_key_checks = 0;";
         mysqli_query($_conn, $_query);
         $_query = <<<EOF
@@ -34,8 +34,7 @@ if (!$_conn) {
         mysqli_query($_conn, $_query);
         session_destroy();
         header("Location: /HighSchoolPrints/");
-    }
-    else if($_button_id == "update") {
+    } else if ($_button_id == "update") {
         $_query = <<<EOF
         UPDATE Students
         SET FName='$_name', LName='$_surname', Mail='$_mail', Password='$_password', Class='$_class'

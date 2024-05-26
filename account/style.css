@@ -78,7 +78,7 @@ button:disabled {
 
 #editButton,
 #updateButton,
-#cancelButton{
+#cancelButton {
     margin-top: 20px;
     width: 100%;
     padding: 20px;
@@ -91,14 +91,14 @@ button:disabled {
 
 #editButton:hover,
 #updateButton:hover,
-#cancelButton:hover{
+#cancelButton:hover {
     background-color: #ff8e8e;
     color: black;
     border: none;
     transition: 0.3s;
 }
 
-#deleteButton{
+#deleteButton {
     margin-top: 20px;
     width: 100%;
     padding: 20px;
@@ -109,7 +109,7 @@ button:disabled {
     letter-spacing: 2px;
 }
 
-#deleteButton:hover{
+#deleteButton:hover {
     background-color: #ff8e8e;
     color: black;
     border: none;
@@ -124,5 +124,13 @@ nav > a[href="/account"] {
 a {
     text-decoration: none; /* Rimuove la sottolineatura */
     color: inherit; /* Utilizza il colore di default del testo */
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
 }
 
