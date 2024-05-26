@@ -105,7 +105,8 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <form action="order_submit.php" method="post" onsubmit="return validateForm()">
-        <h1>Benvenuto, <?php echo htmlspecialchars($user_name); ?> <?php echo htmlspecialchars($user_surname); ?></h1>
+        <h1>Benvenuto, <br>
+            <?php echo htmlspecialchars($user_name); ?> <?php echo htmlspecialchars($user_surname); ?></h1>
 
         <p>Ordina le tue...</p>
         <h1>Foto singole</h1>
