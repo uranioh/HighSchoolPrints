@@ -11,9 +11,8 @@ $_conn = mysqli_connect($_dbhost, $_dbuser, $_dbpass, $_dbname);
 if (!$_conn) {
     die("Connection failed: " . mysqli_connect_error());
 } else {
-    echo "Connected successfully";
 
-    //check if there is a user with given credentials
+    //controllo se l'utente esiste
     $_query = <<<EOF
         SELECT * 
         FROM Students 
@@ -34,7 +33,8 @@ if (!$_conn) {
 //        header("Location: /HighSchoolPrints/account/");
 
     } else {
-        echo "Login failed";
+        echo "<script>alert('Credenziali errate.'); window.location.href = '/HighSchoolPrints/login/?next=" . $_POST['next'] . "';</script>";
+        exit();
     }
     mysqli_close($_conn);
 }
